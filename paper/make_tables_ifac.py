@@ -107,7 +107,7 @@ for ds, d in [("KAIST", dk), ("Paderborn", dp)]:
         s.append(f"{ds} & {names[casc]} & ${m:+.4f}$ \\\\")
     s.append(f"{ds} & all & ${d.loc[('all','all'),'mean']:+.4f} \\pm {d.loc[('all','all'),'std']:.4f}$ \\\\")
 s += ["\\hline\\end{tabular}\\end{table}"]
-w("tab_gate", "\n".join(s))
+# gate-delta table replaced by a sentence in the manuscript (numbers via the gateDelta macros)
 
 # ---------------------------------------------------------------- recalibration (mean over classifiers and alpha; s.d. over seeds)
 def recal_stats(r):
@@ -143,7 +143,7 @@ for ds, g in [("KAIST", gkw), ("Paderborn", gpw)]:
     for k in [1, 2, 3, 5]:
         s.append(f"{ds} & {k} & " + " & ".join(f"{g.loc[k, r]:+.3f}" for r in rhos) + " \\\\")
 s += ["\\hline\\end{tabular}\\end{table}"]
-w("tab_weighted", "\n".join(s))
+# weighted-conformal table replaced by a paragraph in the manuscript (numbers via the w* macros)
 
 # ---------------------------------------------------------------- factor x modality + failure modes (X2, alpha = 0.20, LAC)
 fc = P["factor_coverage"]; fc = fc[(fc.score == "lac") & np.isclose(fc.alpha, 0.2)]

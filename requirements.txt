@@ -1,9 +1,12 @@
-numpy>=1.26
-pandas>=2.1
-pyarrow>=14
-scipy>=1.11
-scikit-learn>=1.4
-matplotlib>=3.8
+# Versions used to generate the committed results (Linux x86-64, Python 3.13).
+# A rerun on another platform/BLAS reproduces every quantity to within +-0.004
+# (random-forest tie-breaking and lbfgs floating-point order); see README.
+numpy==2.5.3
+pandas==3.0.5
+pyarrow==26.0.0
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
 nbformat>=5.9
 nbconvert>=7.10
 jupyter_client>=8

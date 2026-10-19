@@ -44,8 +44,12 @@ python paper/make_tables_ifac.py && (cd paper && pdflatex main_ifac && bibtex ma
 All experiments are seeded (`SEEDS = [0, 1, 2]`, five seeds for recalibration) and run on CPU; a full rerun
 takes under an hour on a free Colab instance. To check that a rerun reproduces the manuscript, regenerate the
 tables and compare the headline macros: `python paper/make_tables_ifac.py && git diff --stat paper/numbers_ifac.tex paper/tables_ifac/`
-(no diff means every number in the paper reproduced; differences in the third decimal can arise from
-BLAS/threading nondeterminism in the random forest and do not change any conclusion).
+(no diff means every number in the paper reproduced). `requirements.txt` pins the library versions used for the
+committed results (Linux x86-64). A full rerun on Apple Silicon (macOS, Homebrew Python) reproduced every headline
+quantity to within ±0.004 (e.g. mean Paderborn gap −0.295 vs −0.296, recalibration at k=5 +0.007 vs +0.008, coverage at
+80 % 70.2 vs 70.3 %); the differences come from random-forest tie-breaking and lbfgs floating-point order under a different
+BLAS, are smaller than the seed-to-seed spread reported in the paper, and change no conclusion. The committed CSVs are the
+reference the manuscript cites; `03_reproduce_from_scratch.ipynb` runs the whole pipeline and prints the diff.
 
 Before publishing a fork, set `REPO_URL` in `build_notebooks.py` (first code cell of both notebooks) to the
 repository's own URL and rebuild the notebooks.

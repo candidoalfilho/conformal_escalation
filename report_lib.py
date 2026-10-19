@@ -110,7 +110,7 @@ def tab_gate_delta(g, protocol="grouped", lo=0.02, hi=0.98):
                                  esc_frac=r.esc_frac, delta_f1=r.f1 - f_soft))
     d = pd.DataFrame(rows)
     out = d.groupby(["cascade", "gate"])["delta_f1"].agg(["mean", "std", "count"]).round(4)
-    out.loc[("all", "all"), :] = [d.delta_f1.mean().round(4), d.delta_f1.std().round(4), len(d)]
+    out.loc[("all", "all"), :] = [round(float(d.delta_f1.mean()), 4), round(float(d.delta_f1.std()), 4), len(d)]
     return out
 
 

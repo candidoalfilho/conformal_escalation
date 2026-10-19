@@ -1,0 +1,11 @@
+\begin{table}[tb]\centering\footnotesize
+\caption{Coverage gap (empirical $-$ nominal) of LAC conformal sets for the cheap tier of the current-first cascade (current, time+FFT on KAIST; two current phases, time+FFT on Paderborn): mean and worst case over the $\alpha$ grid, classifiers and seeds; coverage delivered at nominal 80\,\% by LR / RF (mean over seeds); and the same coverage, averaged over classifiers, for the healthy class and for the fault classes. Protocols: in = recording-grouped, bearing = bearing-grouped, shift = operating-point shift.}
+\label{tab:gap}
+\setlength{\tabcolsep}{3.5pt}\resizebox{\columnwidth}{!}{\begin{tabular}{llcccc}\hline
+dataset & protocol & mean gap & worst gap & cov.\ at 80\,\% LR / RF & healthy / faulty \\ \hline
+KAIST & in & $+0.045$ & $-0.019$ & 82.9 / 93.5\,\% & 38 / 92 \\
+KAIST & shift & $-0.148$ & $-0.453$ & 40.2 / 70.3\,\% & 33 / 56 \\
+Paderborn & in & $-0.009$ & $-0.039$ & 79.0 / 78.2\,\% & 69 / 82 \\
+Paderborn & bearing & $+0.002$ & $-0.053$ & 81.2 / 80.8\,\% & 62 / 82 \\
+Paderborn & shift & $-0.296$ & $-0.501$ & 50.0 / 32.6\,\% & 57 / 37 \\
+\hline\end{tabular}}\end{table}

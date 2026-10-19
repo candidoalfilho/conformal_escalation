@@ -1,0 +1,25 @@
+% GERADO POR make_tables.py -- NAO EDITAR A MAO
+\begin{table}[t]
+\centering\footnotesize\setlength{\tabcolsep}{3.2pt}
+\caption{Sensor-chain frontier. Best of \{logreg, RF, MLP\} per row;
+95\% CI from a cluster bootstrap over \emph{recordings}. Acquisition cost is
+operations per 4096-sample window. Nine time-domain features from a
+\emph{single} accelerometer land within $0.06$ macro-F1 of the full chain at
+$18\times$ lower cost.}
+\label{tab:frontier}
+\begin{tabular}{lrrcc}
+\toprule
+sensor chain & \#f & ops/win & grouped & load shift \\
+\midrule
+temperature only & 4 & 4 & 0.517 \tiny[0.44,0.77] & 0.299 \tiny[0.19,0.40] \\
+current, time only & 9 & 36,864 & 0.355 \tiny[0.30,0.44] & 0.167 \tiny[0.11,0.23] \\
+\textbf{1 accel., time only} & 9 & 36,864 & 0.690 \tiny[0.66,0.76] & 0.687 \tiny[0.63,0.74] \\
+4 accel., time only & 36 & 147,456 & 0.719 \tiny[0.68,0.78] & 0.744 \tiny[0.67,0.79] \\
+current + FFT & 15 & 167,936 & 0.417 \tiny[0.33,0.45] & 0.213 \tiny[0.13,0.29] \\
+1 accel. + FFT & 15 & 167,936 & 0.706 \tiny[0.68,0.78] & 0.714 \tiny[0.61,0.80] \\
+current + FFT + temp. & 19 & 167,940 & 0.587 \tiny[0.58,0.75] & 0.412 \tiny[0.29,0.51] \\
+4 accel. + FFT & 60 & 671,744 & 0.729 \tiny[0.70,0.91] & 0.746 \tiny[0.68,0.81] \\
+4 accel. + FFT + current & 75 & 839,680 & 0.729 \tiny[0.70,0.92] & 0.675 \tiny[0.60,0.74] \\
+\bottomrule
+\end{tabular}
+\end{table}

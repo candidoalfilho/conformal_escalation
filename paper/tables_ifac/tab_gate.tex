@@ -1,0 +1,12 @@
+\begin{table}[t]\centering\footnotesize
+\caption{Macro-F1 difference, conformal gate $-$ softmax threshold, at matched escalation fraction (softmax curve interpolated), in-distribution folds; mean $\pm$ s.d.\ over matched points, scores, classifiers and seeds.}
+\label{tab:gate}
+\setlength{\tabcolsep}{3.5pt}\resizebox{\columnwidth}{!}{\begin{tabular}{llc}\hline
+dataset & cascade (cheap $\to$ expensive) & $\Delta$ macro-F1 \\ \hline
+KAIST & current $\to$ 4 accel.+FFT & $-0.0015$ \\
+KAIST & 1 accel.\ time $\to$ 4 accel.+FFT & $+0.0006$ \\
+KAIST & all & $-0.0000 \pm 0.0039$ \\
+Paderborn & 2 phases $\to$ 1 accel.+FFT & $-0.0016$ \\
+Paderborn & 1 accel.\ time $\to$ 1 accel.+FFT & $-0.0014$ \\
+Paderborn & all & $-0.0015 \pm 0.0043$ \\
+\hline\end{tabular}}\end{table}

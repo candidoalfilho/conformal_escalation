@@ -1,0 +1,11 @@
+\begin{table}[tb]\centering\footnotesize
+\caption{Paderborn: the LAC gate at a fixed $\alpha$ in distribution (recording-grouped) and under operating-point shift, mean over seeds. esc = fraction of windows escalated; F1 = macro-F1 of the cascade; exp.\ = macro-F1 of the expensive tier always on, fitted without the calibration recordings (hence below Table~\ref{tab:frontier}).}
+\label{tab:shift}
+\setlength{\tabcolsep}{3.5pt}\resizebox{\columnwidth}{!}{\begin{tabular}{llc ccc ccc}\hline
+ & & & \multicolumn{3}{c}{in distribution} & \multicolumn{3}{c}{operating-point shift} \\
+cascade & classifier & $\alpha$ & esc & F1 & exp. & esc & F1 & exp. \\ \hline
+1 accel.\ time $\to$ 1 accel.+FFT & LR & 0.10 & 79\,\% & 0.688 & 0.687 & 69\,\% & 0.614 & 0.612 \\
+ & RF & 0.10 & 6\,\% & 0.890 & 0.941 & 6\,\% & 0.719 & 0.753 \\
+2 phases $\to$ 1 accel.+FFT & LR & 0.05 & 88\,\% & 0.753 & 0.687 & 49\,\% & 0.532 & 0.612 \\
+ & RF & 0.05 & 33\,\% & 0.939 & 0.941 & 53\,\% & 0.722 & 0.753 \\
+\hline\end{tabular}}\end{table}

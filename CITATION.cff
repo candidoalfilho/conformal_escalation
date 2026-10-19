@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "Calibrate Where You Deploy: Conformal Sensor Escalation Under Operating-Point Shift"
+authors:
+  - family-names: "de Lucena Filho"
+    given-names: "Cândido A. C."
+    affiliation: "Polytechnic School of the Universidade de São Paulo"
+  - family-names: "Fajardo Grupioni"
+    given-names: "Leonardo"
+    affiliation: "Polytechnic School of the Universidade de São Paulo"
+  - family-names: "Valencia de Almeida"
+    given-names: "Felipe"
+    affiliation: "Polytechnic School of the Universidade de São Paulo"
+year: 2027
+repository-code: "https://github.com/<user>/conformal_escalation"
+license: MIT

@@ -11,6 +11,7 @@
 \usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{xcolor}
+\usepackage{url}
 \input{numbers_ifac}
 \graphicspath{{figs/}{../figs_en/}}
 \newcommand{\TODO}[1]{\textcolor{red}{[#1]}}
@@ -128,7 +129,7 @@ A conformal escalation gate is a better \emph{interface} than a threshold gate, 
 
 \textbf{Limitations.} Energy figures are datasheet-derived, the FFT cycle count is extrapolated (a cycle-count measurement on the ESP32-S3 would replace it), and both tiers share one window (no re-acquisition on escalation). Both benchmarks use hand-crafted features with shallow classifiers; the coverage statements are classifier-agnostic, but the transfer failures may differ for learned or speed-normalised representations. Only labelled target data and fixed source weights were tested; label-free recalibration from unlabelled target windows \citep{yilmaz2022testtime}, likelihood-ratio weighting and online adaptive conformal inference \citep{gibbs2021adaptive} remain to be compared.
 
-\textbf{Code and data.} Both datasets are public; feature extraction, experiments, table generator and executed notebooks (runnable on Google Colab) are at \TODO{repository URL, commit hash}.
+\textbf{Code and data.} Both datasets are public; feature extraction, experiments, table generator and executed notebooks (runnable on Google Colab) are at \url{https://github.com/candidoalfilho/conformal_escalation} (commit b2e4381).
 
 \section{Conclusion}
 Sensor escalation was formulated as a conformal set-size test: a stated risk level replaces a tuned threshold and the escalation rate becomes a measurement. On two benchmarks the gate matches a tuned threshold in accuracy, and its coverage guarantee, valid in distribution even for weak classifiers, fails under operating-point shift, delivering 33--70\,\% where 80\,\% was requested. Five recordings from the new operating point restore the guarantee; pooling them with the stale calibration set is worse than replacing it. Conformal calibration is a commissioning step tied to the operating point, not a one-off performed in the laboratory.

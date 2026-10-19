@@ -15,6 +15,7 @@ Code and analysis for *Calibrate Where You Deploy: Conformal Sensor Escalation U
 | `energy_params.py` | datasheet-derived power figures (MEMS vs current transducer vs IEPE chain, ESP32-S3) |
 | `report_lib.py`, `build_notebooks.py` | figures/tables from the CSVs; generator of the two analysis notebooks |
 | `01_kaist_conformal_gate.ipynb`, `02_paderborn_replication.ipynb` | executed analysis notebooks (read `results*/`, write `figs_en/`) |
+| `03_reproduce_from_scratch.ipynb` | end-to-end reproduction: runs the experiment scripts and diffs the outputs against the committed ones |
 | `results/`, `results_paderborn/` | experiment outputs (CSV) |
 | `figs_en/` | figures (PNG + PDF) |
 | `paper/` | manuscript: `main_ifac.tex` (IFAC class), `refs_ifac.bib`, `make_tables_ifac.py` → `tables_ifac/` and `numbers_ifac.tex` |
@@ -27,6 +28,7 @@ Each notebook starts with a setup cell that clones this repository and installs 
 
 - `01_kaist_conformal_gate.ipynb` — KAIST: frontier, learning curve, coverage, gate, recalibration, weighted conformal prediction
 - `02_paderborn_replication.ipynb` — Paderborn: replication, bearing-grouped validation, factor-by-modality attribution, artificial↔real transfer
+- `03_reproduce_from_scratch.ipynb` — regenerates every CSV, table and macro from the feature files (~1 h on Colab) and diffs them against the committed versions
 
 ## Reproduce
 

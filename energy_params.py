@@ -105,7 +105,7 @@ ESP32S3 = dict(
 # (10 MHz max for this device).  The current ADC (ADS7042) has no FIFO at all, so the
 # MCU idles (WAITI) for the whole window on that tier.
 IIS3DWB_FIFO_BYTES = 3_072
-WINDOW_BYTES_3AXIS = 4096 * 3 * 2
+WINDOW_BYTES_3AXIS = 4096 * 7            # IIS3DWB FIFO word: 1 tag byte + 6 data bytes (DS12569 §3.3.7)
 SPI_MHZ = 10.0
 FIFO_DRAIN_S = WINDOW_BYTES_3AXIS * 8 / (SPI_MHZ * 1e6)      # ~19.7 ms of bus time per window
 FIFO_WAKEUPS = int(np.ceil(WINDOW_BYTES_3AXIS / IIS3DWB_FIFO_BYTES))   # 8

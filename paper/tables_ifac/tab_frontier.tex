@@ -1,15 +1,13 @@
 \begin{table*}[tb]\centering\footnotesize
-\caption{Cost--accuracy frontier: macro-F1 of the best classifier per tier (mean over three seeds for the grouped protocols; one run per held-out point under shift) with 95\,\% percentile intervals of a cluster bootstrap over recordings (bearings for the bearing-grouped column) of the seed-0 predictions; the interval can sit off the point where a class has few recordings (three per class on KAIST). Operations per 160\,ms window.}
+\caption{Cost--accuracy frontier: macro-F1 of the better of LR and RF per tier (mean over three seeds for the grouped protocols; one run per held-out point under shift) with 95\,\% percentile intervals of a cluster bootstrap over recordings (bearings for the bearing-grouped column) of the seed-0 predictions. Operations per 160\,ms window.}
 \label{tab:frontier}
-\setlength{\tabcolsep}{3.5pt}\resizebox{0.9\textwidth}{!}{\begin{tabular}{llrlll}\hline
- & tier & ops / window & recording-grouped [95\,\% CI] & bearing-grouped [95\,\% CI] & operating-point shift [95\,\% CI] \\ \hline
-KAIST & current, time+FFT & 167\,936 & 0.417 [0.33, 0.45] & -- & 0.213 [0.13, 0.29] \\
+\setlength{\tabcolsep}{3.5pt}\begin{tabular}{llrlll}\hline
+ & tier & ops / window & recording-grouped & bearing-grouped & operating-point shift \\ \hline
+KAIST & current, time+FFT & 167\,936 & 0.403 [0.32, 0.46] & -- & 0.213 [0.13, 0.29] \\
  & 1 accel., time & 36\,864 & 0.690 [0.66, 0.76] & -- & 0.687 [0.63, 0.74] \\
- & 1 accel., time+FFT & 167\,936 & 0.706 [0.68, 0.78] & -- & 0.714 [0.61, 0.80] \\
  & 4 accel., time+FFT & 671\,744 & 0.729 [0.70, 0.91] & -- & 0.746 [0.68, 0.81] \\
- & 4 accel. + current & 839\,680 & 0.729 [0.70, 0.92] & -- & 0.675 [0.60, 0.74] \\
-Paderborn & 2 current phases, time+FFT & 335\,872 & 0.908 [0.89, 0.92] & 0.458 [0.34, 0.61] & 0.612 [0.58, 0.64] \\
- & 1 accel., time & 36\,864 & 0.888 [0.88, 0.91] & 0.548 [0.41, 0.68] & 0.714 [0.68, 0.75] \\
- & 1 accel., time+FFT & 167\,936 & 0.959 [0.95, 0.97] & 0.553 [0.40, 0.67] & 0.762 [0.73, 0.79] \\
- & 1 accel. + 2 phases & 503\,808 & 0.991 [0.98, 0.99] & 0.504 [0.37, 0.63] & 0.768 [0.74, 0.80] \\
-\hline\end{tabular}}\end{table*}
+Paderborn & 2 current phases, time+FFT & 335\,872 & 0.905 [0.88, 0.92] & 0.458 [0.34, 0.61] & 0.612 [0.58, 0.64] \\
+ & 1 accel., time & 36\,864 & 0.887 [0.87, 0.91] & 0.548 [0.41, 0.68] & 0.714 [0.68, 0.75] \\
+ & 1 accel., time+FFT & 167\,936 & 0.959 [0.95, 0.97] & 0.553 [0.40, 0.67] & 0.754 [0.72, 0.79] \\
+ & 1 accel. + 2 phases & 503\,808 & 0.985 [0.98, 0.99] & 0.504 [0.37, 0.63] & 0.768 [0.74, 0.80] \\
+\hline\end{tabular}\end{table*}

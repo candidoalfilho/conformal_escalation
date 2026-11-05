@@ -1,7 +1,7 @@
 \begin{table*}[tb]\centering\footnotesize
-\caption{Paderborn, LAC at nominal 80\,\%, classifiers fitted and calibrated at the baseline operating point: coverage (macro-F1 in parentheses) on held-out baseline recordings (in) and on each operating point that changes one factor; coverage, singleton and empty-set fractions with the three shifted points pooled. A wrong singleton is silent under-escalation; an empty set escalates by (\ref{eq:gate}).}
+\caption{Paderborn, LAC at nominal 80\,\%, classifiers fitted and calibrated at the baseline operating point: coverage (macro-F1) on held-out baseline recordings (in; recording-grouped, so the macro-F1 reference is optimistic) and on each point that changes one factor; coverage, singleton and empty-set fractions over the three shifted points; seed s.d.\ $\le0.12$.}
 \label{tab:factor}
-\setlength{\tabcolsep}{3.5pt}\resizebox{0.9\textwidth}{!}{\begin{tabular}{llcccc ccc}\hline
+\setlength{\tabcolsep}{3.5pt}\begin{tabular}{llcccc ccc}\hline
  & & \multicolumn{4}{c}{coverage (macro-F1) by factor changed} & \multicolumn{3}{c}{shift, pooled} \\
 tier & classifier & in & speed & torque & radial force & coverage & singletons & empty \\ \hline
 2 current phases, time+FFT & LR & 0.77 (0.74) & 0.38 (0.14) & 0.35 (0.13) & 0.66 (0.57) & 0.46 & 0.96 & 0.00 \\
@@ -10,4 +10,4 @@ tier & classifier & in & speed & torque & radial force & coverage & singletons &
  & RF & 0.79 (0.93) & 0.08 (0.22) & 0.71 (0.86) & 0.40 (0.59) & 0.40 & 0.53 & 0.47 \\
 1 accel., time+FFT & LR & 0.83 (0.80) & 0.36 (0.27) & 0.80 (0.76) & 0.64 (0.63) & 0.60 & 0.91 & 0.01 \\
  & RF & 0.86 (0.98) & 0.07 (0.26) & 0.67 (0.90) & 0.27 (0.62) & 0.34 & 0.39 & 0.61 \\
-\hline\end{tabular}}\end{table*}
+\hline\end{tabular}\end{table*}

@@ -1,13 +1,12 @@
 \begin{table}[tb]\centering\footnotesize
-\caption{Datasheet power of the sensing chains and of the MCU, and energy per 160\,ms window. The MEMS FIFO holds an eighth of a window, so the MCU drains it eight times over SPI (about 20\,ms at the idle floor); the current ADC has no FIFO. Last row: ESP32-S3 computation for one window of the accelerometer time+FFT tier (71\,264 cycles, FFT count extrapolated from the ESP-DSP benchmarks), marginal at 543\,pJ per cycle and on a total-power basis.}
+\caption{Datasheet typical power of the sensing chains and of the MCU (ESP32-S3, 240\,MHz, peripheral clocks off; other settings move the MCU rows by up to about 3$\times$), and energy per 160\,ms window. Last row: computation of the accelerometer time+FFT tier (71\,264 cycles, 16-bit ESP-DSP FFT, extrapolated), on a marginal (543\,pJ per cycle) / total-power basis.}
 \label{tab:energy}
 \setlength{\tabcolsep}{3.5pt}\resizebox{\columnwidth}{!}{\begin{tabular}{lrr}\hline
 component & mW & mJ / window \\ \hline
-MEMS accel.\ IIS3DWB, 3 axes, ADC on chip & 3.30 & 0.53 \\
-Current transducer LEM CKSR 15-NP + ADC, per phase & 81.66 & 13.07 \\
-Hall current sensor TMCS1100 + ADC, per phase & 22.52 & 3.60 \\
-IEPE accel.\ on TI TIDA-010249 front end & 100.00 & 16.00 \\
-ESP32-S3, MEMS window: light sleep + 8 FIFO drains & -- & 2.25 \\
-ESP32-S3, current window (no FIFO): idle, 240\,MHz & 108.57 & 17.37 \\
-ESP32-S3 computation, accel.\ time+FFT tier (marginal / total) & -- & 0.039 / 0.071 \\
+IIS3DWB MEMS accel., 3 axes, on-chip ADC & 3.30 & 0.53 \\
+LEM CKSR 15-NP transducer + ADC, per phase & 81.66 & 13.07 \\
+TMCS1100 Hall sensor + ADC, per phase & 22.52 & 3.60 \\
+MCU, MEMS window: light sleep + 10 FIFO drains & -- & 2.60 \\
+MCU, current window (no FIFO): idle & 108.57 & 17.37 \\
+MCU compute, accel.\ time+FFT (marg.\ / total) & -- & 0.039 / 0.071 \\
 \hline\end{tabular}}\end{table}

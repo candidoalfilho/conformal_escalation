@@ -8,3 +8,6 @@ paper/*.log
 paper/*.out
 paper/build.log
 legacy/
+
+# internal review-panel reports
+notes/round*/

@@ -94,15 +94,16 @@ def tab_coverage_gap(cc):
     return t
 
 
-def tab_gate_delta(g, protocol="grouped", lo=0.02, hi=0.98):
+def tab_gate_delta(g, protocol="grouped", lo=0.02, hi=0.98, gates=("conformal_lac", "conformal_aps")):
     """Macro-F1 difference conformal − softmax at matched escalation fraction,
-    obtained by linear interpolation of the softmax curve."""
+    obtained by linear interpolation of the softmax curve.  `gates` selects the
+    conformal scores pooled into the "all" row (default: LAC and APS)."""
     rows = []
     for (casc, model, seed), d in g[g.protocol == protocol].groupby(["cascade", "model", "seed"]):
         s = d[d.gate == "softmax"].sort_values("esc_frac")
         if len(s) < 2:
             continue
-        for gate in ("conformal_lac", "conformal_aps"):
+        for gate in gates:
             c = d[(d.gate == gate) & (d.esc_frac > lo) & (d.esc_frac < hi)]
             for _, r in c.iterrows():
                 f_soft = np.interp(r.esc_frac, s.esc_frac.values, s.f1.values)
